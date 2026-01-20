@@ -327,6 +327,23 @@ jpTerminal.addCommand({
 });
 
   jpTerminal.addCommand({
+    name: 'nedry',
+    summary: '???',
+    manPage: 'SYNOPSIS\n' + 
+             'DESCRIPTION\n' + 
+             '\tUnknown command.\n\n' +
+             'AUTHOR\n' + 
+             '\tWritten by Dennis Nedry.\n',
+    command: function(env, inputLine) {
+        const output = [
+            'Must be logged in as Dennis Nedry!!!'
+        ].join('<br>');
+
+        $('#main-input').append($('<span/>').html(output));
+    }
+});
+
+  jpTerminal.addCommand({
     name: 'display',
     summary: 'display image files (hint: use ls to find a \'file\')',
     manPage: 'SYNOPSIS\n' +
