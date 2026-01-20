@@ -304,6 +304,28 @@
     }
   });
 
+jpTerminal.addCommand({
+    name: 'gfxinfo',
+    summary: 'show details about graphics hardware',
+    manPage: 'SYNOPSIS\n' + 
+             '\tgfxinfo\n\n' +
+             'DESCRIPTION\n' + 
+             '\tGraphics board information and graphics configuration details.\n\n' +
+             'AUTHOR\n' + 
+             '\tWritten by Vili Virtanen.\n',
+    command: function(env, inputLine) {
+        const output = [
+            'Graphics board 0 is "GR3-Elan"',
+            'Managed by "mgr0", 1280x1024 pixels, 1 monitor.',
+            'Display board 0: 24 bitplanes, 8-bit color map, 4 overlay planes.',
+            'Z-buffer: 24 bits deep.',
+            'Hardware version: 2.1, Firmware version: 1.4'
+        ].join('<br>');
+
+        $('#main-input').append($('<span/>').html(output));
+    }
+});
+
   jpTerminal.addCommand({
     name: 'display',
     summary: 'display image files (hint: use ls to find a \'file\')',
